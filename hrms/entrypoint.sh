@@ -21,6 +21,9 @@ redis_host="${REDIS_URL#*://}"
 redis_host="${redis_host%%/*}"
 wait-for-it -t 180 "$redis_host"
 
+ls -1 apps > sites/apps.txt
+chown frappe:frappe sites/apps.txt
+
 runuser -u frappe -- bench set-config -g db_host "$DB_HOST"
 runuser -u frappe -- bench set-config -gp db_port "$DB_PORT"
 runuser -u frappe -- bench set-config -g redis_cache "$REDIS_URL"
@@ -28,8 +31,6 @@ runuser -u frappe -- bench set-config -g redis_queue "$REDIS_URL"
 runuser -u frappe -- bench set-config -g redis_socketio "$REDIS_URL"
 runuser -u frappe -- bench set-config -gp socketio_port 9000
 runuser -u frappe -- bench set-config -g chromium_path /usr/bin/chromium-headless-shell
-ls -1 apps > sites/apps.txt
-chown frappe:frappe sites/apps.txt
 
 if [ ! -f "sites/$SITE_NAME/site_config.json" ]; then
   runuser -u frappe -- bench new-site "$SITE_NAME" \
