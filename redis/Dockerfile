@@ -1,2 +1,4 @@
 FROM redis:8.2-alpine
-CMD ["redis-server", "--appendonly", "yes", "--maxmemory-policy", "allkeys-lru"]
+COPY start.sh /usr/local/bin/start-frappe-redis
+RUN chmod 755 /usr/local/bin/start-frappe-redis
+CMD ["/usr/local/bin/start-frappe-redis"]
