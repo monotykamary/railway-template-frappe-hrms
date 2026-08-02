@@ -48,5 +48,7 @@ else
   runuser -u frappe -- bench --site "$SITE_NAME" migrate
 fi
 
+runuser -u frappe -- bench --site "$SITE_NAME" clear-cache
+runuser -u frappe -- bench --site "$SITE_NAME" clear-website-cache
 runuser -u frappe -- bench use "$SITE_NAME"
 exec /usr/bin/supervisord -c /etc/supervisor/supervisord.conf
