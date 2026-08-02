@@ -1,4 +1,4 @@
-FROM frappe/erpnext:v16.29.0
+FROM frappe/erpnext:v16.30.0
 
 USER root
 RUN apt-get update \
@@ -7,7 +7,7 @@ RUN apt-get update \
 
 USER frappe
 WORKDIR /home/frappe/frappe-bench
-RUN bench get-app --branch v16.14.0 https://github.com/frappe/hrms \
+RUN bench get-app --branch v16.15.0 https://github.com/frappe/hrms \
     && bench build --app hrms \
     && rm -rf /home/frappe/frappe-bench/assets \
     && cp -r /home/frappe/frappe-bench/sites/assets /home/frappe/frappe-bench/assets
