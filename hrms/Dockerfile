@@ -1,4 +1,4 @@
-FROM docker.io/frappe/erpnext:v16.31.1@sha256:dba34b89f11e22e14cfc05f6846ff39a223187bf7dfc63266565d646f1569674
+FROM docker.io/frappe/erpnext:v16.34.1@sha256:eee240a179ff494cb82ad067d853c8db3f87171d86324f4b326892654e342144
 
 USER root
 RUN apt-get update \
@@ -7,7 +7,7 @@ RUN apt-get update \
 
 USER frappe
 WORKDIR /home/frappe/frappe-bench
-RUN bench get-app --branch v16.16.0 https://github.com/frappe/hrms \
+RUN bench get-app --branch v16.17.1 https://github.com/frappe/hrms \
     && bench build \
     && grep -Fq '"website.bundle.css"' sites/assets/assets.json \
     && grep -Fq '"erpnext-web.bundle.css"' sites/assets/assets.json \
