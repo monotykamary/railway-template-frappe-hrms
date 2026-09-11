@@ -1,6 +1,6 @@
 # Frappe HRMS on Railway
 
-A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.17.1` and ERPNext `v16.34.1`.
+A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.18.1` and ERPNext `v16.34.2`.
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/frappe-hrms?referralCode=ZqgrJ0)
 
