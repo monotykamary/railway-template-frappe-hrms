@@ -1,4 +1,4 @@
-FROM docker.io/frappe/erpnext:v16.34.2@sha256:eee240a179ff494cb82ad067d853c8db3f87171d86324f4b326892654e342144
+FROM docker.io/frappe/erpnext:v16.34.2@sha256:2feeb8973c3581726b4abd451ccb69c18426ec547bd04f7a4fdee47f17d1c3f1
 
 USER root
 RUN apt-get update \
