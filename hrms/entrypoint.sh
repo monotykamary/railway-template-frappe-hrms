@@ -12,7 +12,8 @@ BENCH=/home/frappe/frappe-bench
 cd "$BENCH"
 
 mkdir -p sites logs
-chown -R frappe:frappe sites logs
+frappe_group="$(id -gn frappe)"
+chown -R frappe:"$frappe_group" sites logs
 rm -rf sites/assets
 ln -s "$BENCH/assets" sites/assets
 
@@ -25,7 +26,7 @@ ls -1 apps > sites/apps.txt
 if [ ! -f sites/common_site_config.json ]; then
   echo '{}' > sites/common_site_config.json
 fi
-chown frappe:frappe sites/apps.txt sites/common_site_config.json
+chown frappe:"$frappe_group" sites/apps.txt sites/common_site_config.json
 
 runuser -u frappe -- bench set-config -g db_host "$DB_HOST"
 runuser -u frappe -- bench set-config -gp db_port "$DB_PORT"
