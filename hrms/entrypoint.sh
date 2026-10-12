@@ -34,7 +34,7 @@ runuser -u frappe -- bench set-config -g redis_cache "$REDIS_URL"
 runuser -u frappe -- bench set-config -g redis_queue "$REDIS_URL"
 runuser -u frappe -- bench set-config -g redis_socketio "$REDIS_URL"
 runuser -u frappe -- bench set-config -gp socketio_port 9000
-runuser -u frappe -- bench set-config -g chromium_path /usr/bin/chromium-headless-shell
+runuser -u frappe -- bench set-config -g chromium_path /usr/lib/chromium/chromium-headless-shell
 
 if [ ! -f "sites/$SITE_NAME/site_config.json" ]; then
   runuser -u frappe -- bench new-site "$SITE_NAME" \

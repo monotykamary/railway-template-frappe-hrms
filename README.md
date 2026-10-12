@@ -1,6 +1,6 @@
 # Frappe HRMS on Railway
 
-A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.20.1` and ERPNext `v16.37.0`.
+A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.50.0` and ERPNext `v16.50.0`.
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/frappe-hrms?referralCode=ZqgrJ0)
 
@@ -9,7 +9,7 @@ Railway does not support sharing one volume across independent services. The off
 ## Services
 
 - `hrms`: Frappe backend, nginx frontend, Socket.IO, short and long workers, scheduler
-- `mariadb`: persistent MariaDB 11.8.8
+- `mariadb`: persistent MariaDB 11.8.9
 - `redis`: persistent Redis queue/cache
 
 The first deployment creates the `frontend` site and installs ERPNext and HRMS. Later deployments run `bench migrate` automatically.
