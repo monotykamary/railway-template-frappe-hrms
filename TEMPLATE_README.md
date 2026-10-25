@@ -17,7 +17,7 @@ Frappe's standard production topology shares the `sites` directory across nginx,
 
 ## Dependencies for Frappe HRMS Hosting
 
-- MariaDB 11.8.9 with durable storage
+- MariaDB 13.0.2 with durable storage
 - Redis queue/cache with durable storage
 - A comparatively high memory allocation; Frappe v16 is a substantial multi-process stack
 

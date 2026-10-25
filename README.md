@@ -9,7 +9,7 @@ Railway does not support sharing one volume across independent services. The off
 ## Services
 
 - `hrms`: Frappe backend, nginx frontend, Socket.IO, short and long workers, scheduler
-- `mariadb`: persistent MariaDB 11.8.9
+- `mariadb`: persistent MariaDB 13.0.2
 - `redis`: persistent Redis queue/cache
 
 The first deployment creates the `frontend` site and installs ERPNext and HRMS. Later deployments run `bench migrate` automatically.
