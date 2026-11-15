@@ -1,6 +1,6 @@
 # Frappe HRMS on Railway
 
-A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.51.0` and ERPNext `v16.52.1`.
+A Railway-compatible deployment of [Frappe HRMS](https://github.com/frappe/hrms), pinned to HRMS `v16.53.2` (`ba5371c5057ae90c3eb6041f28866fe3d749a4f0`) and ERPNext `v16.52.1`.
 
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/frappe-hrms?referralCode=ZqgrJ0)
 
@@ -16,4 +16,4 @@ The first deployment creates the `frontend` site and installs ERPNext and HRMS. 
 
 ## Updating
 
-Update and test the ERPNext base image and HRMS release together. Frappe application versions must remain compatible.
+Keep Frappe, ERPNext, and HRMS releases compatible. HRMS v16.53.2 declares Frappe and ERPNext >=16.50.0,<17.0.0; this update retains the existing ERPNext base image and MariaDB/Redis pins. Test the in-place migration and retained application data before promoting any update.

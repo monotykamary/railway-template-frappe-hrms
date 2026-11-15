@@ -7,7 +7,8 @@ RUN apt-get update \
 
 USER frappe
 WORKDIR /home/frappe/frappe-bench
-RUN bench get-app --branch v16.51.0 https://github.com/frappe/hrms \
+RUN bench get-app --branch v16.53.2 https://github.com/frappe/hrms \
+    && test "$(git -C apps/hrms rev-parse HEAD)" = "ba5371c5057ae90c3eb6041f28866fe3d749a4f0" \
     && bench build \
     && grep -Fq '"website.bundle.css"' sites/assets/assets.json \
     && grep -Fq '"erpnext-web.bundle.css"' sites/assets/assets.json \
